@@ -1,0 +1,85 @@
+1 завдання:
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double x, y;
+    int count = 1;
+
+    while(count <= 5){
+        cout << "enter x: ";
+        cin >> x;
+        y = pow(sin(x), 5) + fabs(5 * x - 1.5);
+        cout << "solution of expression: "<< y << endl;
+        count++;
+    }
+}
+
+
+
+
+2 завдання:
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    unsigned long long factorial = 1;
+
+    cout << "Factorial of first 15 numbers:" << endl;
+
+    for (int i = 1; i <= 15; i++) {
+        factorial *= i;
+        cout << i << "! = " << factorial << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+3 завдання:
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double a, b, h, x, y;
+
+    cout << "Enter start of interval a: ";
+    cin >> a;
+    cout << "Enter end of interval b: ";
+    cin >> b;
+    cout << "Enter step h: ";
+    cin >> h;
+
+    cout << "-----------------------------" << endl;
+    cout << setw(10) << "X" << setw(15) << "Y" << endl;
+    cout << "-----------------------------" << endl;
+
+    x = a;
+    while (x <= b) {
+        if (x == 0 || x < -3) {
+            cout << setw(10) << fixed << setprecision(2) << x
+                 << setw(15) << "undefined" << endl;
+        } else {
+            y = 1.0 / x + sqrt(x + 3) + 6;
+            cout << setw(10) << fixed << setprecision(2) << x
+                 << setw(15) << fixed << setprecision(4) << y << endl;
+        }
+        x += h;
+    }
+
+    cout << "-----------------------------" << endl;
+    return 0;
+}
