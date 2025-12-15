@@ -1,0 +1,136 @@
+6 завдання:
+
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+
+
+int main(void) {
+bool answer;
+int value;
+
+cout << "Enter a value: ";
+cin >> value;
+
+answer = 
+    (value >= 0 && value < 10)|| 
+    (value * 2 < 20 && value - 2 > -2)||
+    (value - 1 > 1 && value / 2 < 10) ||
+    (value == 111);
+
+cout << (answer ? "THAT'S TRUE :)" : "THAT'S NOT TRUE :(") << endl;
+
+return 0;
+}
+
+
+7 завдання:
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+
+
+int main(void) {
+float a,b,c,d,e;
+    cout << "Enter 1-st number: ";
+    cin >> a;
+    cout << "Enter 2-nd number: ";
+    cin >> b;
+    cout << "Enter 3-rd number: ";
+    cin >> c;
+    cout << "Enter 4-th number: ";
+    cin >> d;
+    cout << "Enter 5-th number: ";
+    cin >> e;
+
+cout << "formatted list: \n";   
+cout << "1-st number: " << a << endl;                                
+cout << "2-nd number: " << fixed << setprecision(2) << b << endl; 
+cout << "3-rd number: " << fixed << setprecision(6) << c << endl;
+cout << "4-th number: " << fixed << setprecision(2) << d << endl;     
+cout << "5-th number: " << fixed << setprecision(0) << e << endl;    
+
+}
+
+8 завдання:
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+
+
+int main(void) {
+int num1, num2;
+cout << "enter first number: ";
+cin >> num1;
+cout << "enter second number: ";
+cin >> num2;
+
+ 
+double res1 = 1.0 / num1;
+double res2 = 1.0 / num2;
+double epsilon = 0.000001;
+
+if (fabs(res1 - res2) < epsilon) {
+    cout << "Results are equal (by 0.000001 epsilon)" << endl;
+    } else {
+        cout << "Results are not equal (by 0.000001 epsilon)" << endl;
+        }    
+}
+
+
+9 завдання:
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main(void) {
+    int a, b, c, d;
+
+    cout << "Enter 1-st number (0 - 255): ";
+    cin >> a;
+    if (a < 0 || a > 255) {
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    cout << "Enter 2-nd number (0 - 255): ";
+    cin >> b;
+    if (b < 0 || b > 255) {
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    cout << "Enter 3-rd number (0 - 255): ";
+    cin >> c;
+    if (c < 0 || c > 255) {
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    cout << "Enter 4-th number (0 - 255): ";
+    cin >> d;
+    if (d < 0 || d > 255) {
+        cout << "Invalid input\n";
+        return 0;
+    }
+cout << "\nYour IP address is: " 
+    << a << "." << b << "." << c << "." << d << endl;
+}
+
+
+
+
+
