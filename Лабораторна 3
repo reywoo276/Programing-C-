@@ -1,0 +1,81 @@
+1 завдання:
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter a three-digit positive number: ";
+    cin >> N;
+
+    int a = N / 100;        
+    int b = (N / 10) % 10; 
+    int c = N % 10;        
+
+    int oddCount = 0;
+
+    if (a % 2 != 0) oddCount++;
+    if (b % 2 != 0) oddCount++;
+    if (c % 2 != 0) oddCount++;
+
+    cout << "Number of odd digits: " << oddCount << endl;
+
+    return 0;
+}
+
+
+2 завдання:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int month;
+
+    cout << "Enter month number (1-12): ";
+    cin >> month;
+
+    switch (month) {
+        case 1:
+            cout << "Sichen - January";
+            break;
+        case 2:
+            cout << "Lyutyi - February";
+            break;
+        case 3:
+            cout << "Berezen - March";
+            break;
+        case 4:
+            cout << "Kviten - April";
+            break;
+        case 5:
+            cout << "Traven - May";
+            break;
+        case 6:
+            cout << "Cherven - June";
+            break;
+        case 7:
+            cout << "Lypen - July";
+            break;
+        case 8:
+            cout << "Serpen - August";
+            break;
+        case 9:
+            cout << "Veresen - September";
+            break;
+        case 10:
+            cout << "Zhovten - October";
+            break;
+        case 11:
+            cout << "Lystopad - November";
+            break;
+        case 12:
+            cout << "Hruden - December";
+            break;
+        default:
+            cout << "Invalid month number";
+    }
+
+    cout << endl;
+    return 0;
+}
+
