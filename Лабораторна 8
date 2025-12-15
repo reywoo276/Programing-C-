@@ -1,0 +1,62 @@
+1 завдання:
+
+#include <iostream>
+#include <vector>
+#include <algorithm> // sort, reverse
+using namespace std;
+
+int main() {
+    const int m = 12;
+    vector<int> a(m);
+
+    cout << "Enter " << m << " integers:\n";
+    for (int i = 0; i < m; ++i) cin >> a[i];
+
+    vector<int> asc = a;
+    sort(asc.begin(), asc.end());
+
+    vector<int> desc = asc;
+    reverse(desc.begin(), desc.end());
+
+    cout << "\nSorted ascending:\n";
+    for (int x : asc) cout << x << " ";
+    cout << "\nSorted descending:\n";
+    for (int x : desc) cout << x << " ";
+    cout << "\n";
+
+    return 0;
+}
+
+
+2 завдання:
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    const int m = 12;
+    vector<int> a(m);
+
+    cout << "Enter " << m << " integers:\n";
+    for (int i = 0; i < m; ++i) cin >> a[i];
+
+    
+    auto it_max = max_element(a.begin(), a.end());
+    int idx_max = distance(a.begin(), it_max); 
+
+    vector<int> b = a;
+
+    for (int i = 0; i < idx_max; ++i) {
+        if (b[i] < 0) b[i] = 0;
+    }
+
+    cout << "\nOriginal array:\n";
+    for (int x : a) cout << x << " ";
+    cout << "\nModified array (negatives before first max -> 0):\n";
+    for (int x : b) cout << x << " ";
+    cout << "\nFirst maximum value: " << *it_max << " at index " << idx_max << "\n";
+
+    return 0;
+}
