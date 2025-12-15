@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter N: ";
+    cin >> N;
+
+    int sum = 0;
+    int current;
+
+    while (N > 0) {
+        current = N % 10;
+        if (current > 2 && current % 2 == 1) {
+            sum += current;
+        }
+        N /= 10;
+    }
+
+    cout << "the sum of numbers that are greater than 2 and are odd = " << sum << endl;
+
+    return 0;
+}
