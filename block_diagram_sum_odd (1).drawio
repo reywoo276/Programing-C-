@@ -1,0 +1,129 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram id="sumOddDiagram" name="Algorithm">
+    <mxGraphModel dx="1042" dy="570" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Початок" vertex="1">
+          <mxGeometry height="50" width="120" x="340" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="inputN" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Ввести N" vertex="1">
+          <mxGeometry height="60" width="140" x="330" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sum0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="sum = 0" vertex="1">
+          <mxGeometry height="50" width="120" x="340" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="condN" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="N &gt; 0 ?" vertex="1">
+          <mxGeometry height="70" width="120" x="340" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="digit" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="current = N % 10" vertex="1">
+          <mxGeometry height="50" width="120" x="340" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="condDigit" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="current &amp;gt; 2 &amp;amp;&amp;amp;&amp;nbsp;&lt;div&gt;current&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;% 2 = 1?&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="160" x="320" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="addSum" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="sum = sum + current" vertex="1">
+          <mxGeometry height="50" width="150" x="150" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="divN" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="N = N / 10" vertex="1">
+          <mxGeometry height="50" width="150" x="450" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="output" parent="1" style="shape=parallelogram;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Вивести sum" vertex="1">
+          <mxGeometry height="60" width="130" x="340" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="start" target="inputN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="inputN" target="sum0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="sum0" target="condN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="condN" target="digit">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Dx8ILqT4ubLa2jlzLfuQ-10" connectable="0" parent="edge4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="так" vertex="1">
+          <mxGeometry relative="1" x="-0.44" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="digit" target="condDigit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="A_AVKfGFM9mOBBWOLN90-1" target="addSum">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="A_AVKfGFM9mOBBWOLN90-3" target="divN">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="addSum" target="divN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_AVKfGFM9mOBBWOLN90-2" edge="1" parent="1" source="condDigit" target="A_AVKfGFM9mOBBWOLN90-1" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="363" y="524" as="sourcePoint" />
+            <mxPoint x="274" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A_AVKfGFM9mOBBWOLN90-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="так" vertex="1">
+          <mxGeometry height="30" width="60" x="290" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="A_AVKfGFM9mOBBWOLN90-4" edge="1" parent="1" source="condDigit" target="A_AVKfGFM9mOBBWOLN90-3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="527" as="sourcePoint" />
+            <mxPoint x="490" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A_AVKfGFM9mOBBWOLN90-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Ні" vertex="1">
+          <mxGeometry height="30" width="60" x="430" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="Dx8ILqT4ubLa2jlzLfuQ-3" edge="1" parent="1" source="condN" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="100" y="390" as="sourcePoint" />
+            <mxPoint x="80" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Dx8ILqT4ubLa2jlzLfuQ-11" connectable="0" parent="Dx8ILqT4ubLa2jlzLfuQ-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="ні" vertex="1">
+          <mxGeometry relative="1" x="-0.7811" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Dx8ILqT4ubLa2jlzLfuQ-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="680" />
+            </Array>
+            <mxPoint x="80" y="570" as="sourcePoint" />
+            <mxPoint x="330" y="725" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Dx8ILqT4ubLa2jlzLfuQ-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Кінець" vertex="1">
+          <mxGeometry height="80" width="120" x="340" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="Dx8ILqT4ubLa2jlzLfuQ-8" edge="1" parent="1" source="output" style="endArrow=classic;html=1;rounded=0;exitX=0.446;exitY=1.057;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Dx8ILqT4ubLa2jlzLfuQ-7" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="380" y="710" as="sourcePoint" />
+            <mxPoint x="430" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Dx8ILqT4ubLa2jlzLfuQ-9" edge="1" parent="1" source="divN" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="280" />
+              <mxPoint x="430" y="280" />
+            </Array>
+            <mxPoint x="400" y="480" as="sourcePoint" />
+            <mxPoint x="400" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
