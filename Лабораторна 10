@@ -1,0 +1,244 @@
+1 завдання:
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int m = 4, n = 3;
+    int arr[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 21;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    for(int i = 0; i < m; i++) {
+        int count = 0;
+        for(int j = 0; j < n; j++)
+            if(arr[i][j] % 2 == 0) count++;
+        cout << "Row " << i << ": " << count << " even numbers" << endl;
+    }
+
+    return 0;
+}
+
+2 завдання:
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int m = 6, n = 4;
+    int arr[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 21;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    for(int j = 0; j < n; j++) {
+        int count = 0;
+        for(int i = 0; i < m; i++)
+            if(arr[i][j] % 2 == 0) count++;
+        cout << "Column " << j << ": " << count << " even numbers" << endl;
+    }
+
+    return 0;
+}
+
+3 завдання:
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int m = 5, n = 7;
+    int arr[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 21;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    for(int i = 0; i < m; i++) {
+        int sum = 0;
+        for(int j = 0; j < n; j++)
+            sum += arr[i][j];
+        cout << "Sum of row " << i << " = " << sum << endl;
+    }
+
+    return 0;
+}
+
+4 завдання:
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int m = 4, n = 6;
+    int arr[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 21;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    for(int j = 0; j < n; j++) {
+        int sum = 0;
+        for(int i = 0; i < m; i++)
+            sum += arr[i][j];
+        cout << "Sum of column " << j << " = " << sum << endl;
+    }
+
+    return 0;
+}
+
+5 завдання:
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int m = 3, n = 4;
+    int arr[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 21;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    int maxVal = arr[0][0], rowIndex = 0, colIndex = 0;
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            if(arr[i][j] > maxVal) {
+                maxVal = arr[i][j];
+                rowIndex = i;
+                colIndex = j;
+            }
+
+    cout << "Max element = " << maxVal 
+         << " at position (" << rowIndex << ", " << colIndex << ")" << endl;
+
+    return 0;
+}
+
+6 завдання:
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int m = 4, n = 7;
+    int arr[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 21;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    int minVal = arr[0][0], rowIndex = 0, colIndex = 0;
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            if(arr[i][j] < minVal) {
+                minVal = arr[i][j];
+                rowIndex = i;
+                colIndex = j;
+            }
+
+    cout << "Min element = " << minVal 
+         << " at position (" << rowIndex << ", " << colIndex << ")" << endl;
+
+    return 0;
+}
+
+15 завдання:
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    int m = 3, n = 3;
+    int arr[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 21;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+
+    int sumMainDiag = 0;
+    for(int i = 0; i < m; i++)
+        sumMainDiag += arr[i][i];
+
+    int sumSecondaryDiag = 0;
+    for(int i = 0; i < m; i++)
+        sumSecondaryDiag += arr[i][n - 1 - i];
+
+    cout << "Sum of main diagonal = " << sumMainDiag << endl;
+    cout << "Sum of secondary diagonal = " << sumSecondaryDiag << endl;
+
+    return 0;
+}
