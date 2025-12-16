@@ -1,0 +1,97 @@
+1 завдання:
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+struct Date {
+    int hours;
+    int minutes;
+};
+
+int main() {
+    Date time;
+    int addMinutes;
+
+    cout << "Enter hours (0-23): ";
+    cin >> time.hours;
+
+    cout << "Enter minutes (0-59): ";
+    cin >> time.minutes;
+
+    cout << "Enter minutes to add: ";
+    cin >> addMinutes;
+
+    if (time.hours < 0 || time.hours >= 24 || time.minutes < 0 || time.minutes >= 60) {
+        cout << "Invalid time input!" << endl;
+        return 1;
+    }
+
+    int totalMinutes = time.hours * 60 + time.minutes + addMinutes;
+
+    totalMinutes %= (24 * 60);
+
+    time.hours = totalMinutes / 60;
+    time.minutes = totalMinutes % 60;
+
+    cout << "Result time: "
+         << setw(2) << setfill('0') << time.hours << ":"
+         << setw(2) << setfill('0') << time.minutes << endl;
+
+    return 0;
+}
+
+2 завдання:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+struct Date {
+    int hours;
+    int minutes;
+};
+
+bool isValidTime(const Date& t) {
+    return t.hours >= 0 && t.hours < 24 &&
+           t.minutes >= 0 && t.minutes < 60;
+}
+
+int main() {
+    Date start, end;
+
+    while (true) {
+        cout << "Enter start time as TWO numbers (HH MM), example: 12 30: ";
+        cin >> start.hours >> start.minutes;
+
+        if (isValidTime(start)) break;
+
+        cout << "Invalid start time! Hours: 0-23, Minutes: 0-59\n";
+    }
+
+    while (true) {
+        cout << "Enter end time as TWO numbers (HH MM), example: 18 45: ";
+        cin >> end.hours >> end.minutes;
+
+        if (isValidTime(end)) break;
+
+        cout << "Invalid end time! Hours: 0-23, Minutes: 0-59\n";
+    }
+
+    int startTotal = start.hours * 60 + start.minutes;
+    int endTotal   = end.hours * 60 + end.minutes;
+
+    if (endTotal < startTotal) {
+        endTotal += 24 * 60;
+    }
+
+    int duration = endTotal - startTotal;
+
+    int durHours = duration / 60;
+    int durMinutes = duration % 60;
+
+    cout << "Event duration: "
+         << setw(2) << setfill('0') << durHours << ":"
+         << setw(2) << setfill('0') << durMinutes << endl;
+
+    return 0;
+}
