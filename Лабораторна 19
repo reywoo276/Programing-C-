@@ -1,0 +1,130 @@
+Завдання 1:
+#include <iostream>
+#include <string>
+#include <map>
+
+using namespace std;
+
+int main() {
+    string values;
+    getline(cin, values);
+
+    string text;
+    getline(cin, text);
+
+    map<string, string> data;
+
+    size_t start = 0;
+
+    while (start < values.size()) {
+        size_t comma = values.find(',', start);
+
+        string pair;
+        if (comma == string::npos)
+            pair = values.substr(start);
+        else
+            pair = values.substr(start, comma - start);
+
+        size_t eq = pair.find('=');
+
+        if (eq != string::npos) {
+            string key = pair.substr(0, eq);
+            string value = pair.substr(eq + 1);
+            data[key] = value;
+        }
+
+        if (comma == string::npos)
+            break;
+
+        start = comma + 1;
+    }
+
+    string result;
+    size_t pos = 0;
+
+    while (pos < text.size()) {
+        if (text[pos] == '[') {
+            size_t end = text.find(']', pos);
+
+            if (end != string::npos) {
+                string key = text.substr(pos + 1, end - pos - 1);
+
+                if (data.count(key))
+                    result += data[key];
+                else
+                    result += "[" + key + "]";
+
+                pos = end + 1;
+            } else {
+                result += text[pos];
+                pos++;
+            }
+        } else {
+            result += text[pos];
+            pos++;
+        }
+    }
+
+    cout << result << endl;
+
+    return 0;
+}
+Завдання 2:
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    string password;
+    getline(cin, password);
+
+    bool hasUpper = false;
+    bool hasLower = false;
+    bool hasDigit = false;
+    bool hasSpecial = false;
+    bool valid = true;
+
+    if (password.length() < 8) {
+        cout << "The password must be 8 characters long" << endl;
+        valid = false;
+    }
+
+    for (char ch : password) {
+        if (isupper(ch))
+            hasUpper = true;
+        else if (islower(ch))
+            hasLower = true;
+        else if (isdigit(ch))
+            hasDigit = true;
+        else
+            hasSpecial = true;
+    }
+
+    if (!hasUpper) {
+        cout << "The password must have at least one upper case letter" << endl;
+        valid = false;
+    }
+
+    if (!hasLower) {
+        cout << "The password must have at least one lower case letter" << endl;
+        valid = false;
+    }
+
+    if (!hasDigit) {
+        cout << "The password must have at least one digit" << endl;
+        valid = false;
+    }
+
+    if (!hasSpecial) {
+        cout << "The password must have at least one special character" << endl;
+        valid = false;
+    }
+
+    if (valid) {
+        cout << "The password is valid" << endl;
+    }
+
+    return 0;
+}
