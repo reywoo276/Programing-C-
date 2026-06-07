@@ -1,0 +1,122 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <cmath>
+
+using namespace std;
+
+class Fraction {
+public:
+    Fraction(int numerator, int denominator);
+
+    string toString();
+
+    bool isGreaterThan(Fraction that);
+    bool isLessThan(Fraction that);
+    bool isEqual(Fraction that);
+
+private:
+    int numerator;
+    int denominator;
+
+    void reduce();
+};
+
+Fraction::Fraction(int numerator, int denominator) {
+    this->numerator = numerator;
+    this->denominator = denominator;
+    reduce();
+}
+
+void Fraction::reduce() {
+    int a = abs(numerator);
+    int b = abs(denominator);
+
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    numerator /= a;
+    denominator /= a;
+
+    if (denominator < 0) {
+        numerator = -numerator;
+        denominator = -denominator;
+    }
+}
+
+string Fraction::toString() {
+    int num = numerator;
+    int den = denominator;
+
+    bool negative = num < 0;
+
+    num = abs(num);
+
+    int whole = num / den;
+    int remainder = num % den;
+
+    string result;
+
+    if (negative)
+        result += "-";
+
+    if (remainder == 0) {
+        result += to_string(whole);
+    }
+    else if (whole == 0) {
+        result += to_string(remainder) + "/" + to_string(den);
+    }
+    else {
+        result += to_string(whole) + " " +
+                  to_string(remainder) + "/" +
+                  to_string(den);
+    }
+
+    return result;
+}
+
+bool Fraction::isGreaterThan(Fraction that) {
+    return numerator * that.denominator >
+           that.numerator * denominator;
+}
+
+bool Fraction::isLessThan(Fraction that) {
+    return numerator * that.denominator <
+           that.numerator * denominator;
+}
+
+bool Fraction::isEqual(Fraction that) {
+    return numerator * that.denominator ==
+           that.numerator * denominator;
+}
+
+int main() {
+    string input1, input2;
+
+    getline(cin, input1);
+    getline(cin, input2);
+
+    int n1, d1, n2, d2;
+    char slash;
+
+    stringstream ss1(input1);
+    ss1 >> n1 >> slash >> d1;
+
+    stringstream ss2(input2);
+    ss2 >> n2 >> slash >> d2;
+
+    Fraction f1(n1, d1);
+    Fraction f2(n2, d2);
+
+    if (f1.isGreaterThan(f2))
+        cout << f1.toString() << " > " << f2.toString() << endl;
+    else if (f1.isLessThan(f2))
+        cout << f1.toString() << " < " << f2.toString() << endl;
+    else
+        cout << f1.toString() << " = " << f2.toString() << endl;
+
+    return 0;
+}
