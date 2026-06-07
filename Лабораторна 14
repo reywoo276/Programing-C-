@@ -1,0 +1,100 @@
+Завдання 1:
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+
+    srand(time(0));
+
+    int arraySize = 10;
+    float* numbers = new float[arraySize];
+
+    int positiveCount = 0;
+    int negativeCount = 0;
+
+    cout << "Array elements:\n";
+
+    for (int index = 0; index < arraySize; index++) {
+
+        numbers[index] = -2 + (float)rand() / RAND_MAX * 4;
+
+        cout << numbers[index] << " ";
+
+        if (numbers[index] > 0)
+            positiveCount++;
+
+        if (numbers[index] < 0)
+            negativeCount++;
+    }
+
+    cout << "\n\nPositive numbers: " << positiveCount << endl;
+    cout << "Negative numbers: " << negativeCount << endl;
+
+    delete[] numbers;
+
+    return 0;
+}
+
+Завдання 2:
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+
+    srand(time(0));
+
+    int matrixSize = 3;
+
+    int** matrix = new int*[matrixSize];
+
+    for (int row = 0; row < matrixSize; row++) {
+        matrix[row] = new int[matrixSize];
+    }
+
+    int evenCount = 0;
+    int oddCount = 0;
+
+    cout << "Matrix:\n";
+
+    for (int row = 0; row < matrixSize; row++) {
+        for (int column = 0; column < matrixSize; column++) {
+
+            matrix[row][column] = rand() % 20;
+
+            cout << matrix[row][column] << "\t";
+
+            if (matrix[row][column] % 2 == 0)
+                evenCount++;
+            else
+                oddCount++;
+        }
+        cout << endl;
+    }
+
+    cout << "\nMain diagonal:\n";
+    for (int i = 0; i < matrixSize; i++) {
+        cout << matrix[i][i] << " ";
+    }
+
+    cout << "\nSide diagonal:\n";
+    for (int i = 0; i < matrixSize; i++) {
+        cout << matrix[i][matrixSize - 1 - i] << " ";
+    }
+
+    cout << "\n\nEven numbers: " << evenCount << endl;
+    cout << "Odd numbers: " << oddCount << endl;
+
+    for (int row = 0; row < matrixSize; row++) {
+        delete[] matrix[row];
+    }
+
+    delete[] matrix;
+
+    return 0;
+}
